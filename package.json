@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "name": "searchtabs-api",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "main": "./build/main.js",
+  "scripts": {
+    "build": "backpack build",
+    "start": "node ./build/main.js",
+    "dev": "backpack dev",
+    "lint": "eslint src --ext .js",
+    "lint:fix": "eslint src --ext .js --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.12.1",
+    "backpack-core": "^0.8.4",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.13",
+    "password-hash": "^1.2.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "husky": "^4.2.5"
+  },
+  "license": "ISC"
+}

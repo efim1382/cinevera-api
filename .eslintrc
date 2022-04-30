@@ -1,0 +1,110 @@
+{
+
+  "env": {
+    "node": true,
+    "es6": true
+  },
+
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module"
+  },
+
+  "extends": [
+    "eslint:recommended"
+  ],
+
+  "rules": {
+    "semi": "error",
+    "object-curly-spacing": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"],
+    "no-multi-spaces": "error",
+    "no-mixed-spaces-and-tabs": "error",
+    "no-trailing-spaces": "error",
+    "no-whitespace-before-property": "error",
+    "space-before-blocks": "error",
+
+    "space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "ignore"
+    }],
+
+    "space-in-parens": ["error", "never"],
+    "keyword-spacing": 2,
+    "curly": 2,
+    "no-multiple-empty-lines": ["error", { "max": 1 }],
+    "space-infix-ops": ["error", { "int32Hint": false }],
+    "max-depth": ["error", 3],
+    "brace-style": [2, "1tbs", { "allowSingleLine": false }],
+    "arrow-spacing": "error",
+    "no-template-curly-in-string": "error",
+    "block-scoped-var": "error",
+    "eqeqeq": "error",
+    "no-implicit-globals": "error",
+    "no-param-reassign": "error",
+    "no-script-url": "error",
+    "no-self-compare": "error",
+    "no-sequences": "error",
+    "yoda": "error",
+    "computed-property-spacing": ["error", "never"],
+    "func-call-spacing": ["error", "never"],
+    "quotes": ["error", "double"],
+    "jsx-quotes": ["error", "prefer-double"],
+    "lines-between-class-members": ["error", "always"],
+    "max-statements-per-line": ["error", { "max": 1 }],
+    "no-multi-assign": "error",
+    "padded-blocks": ["error", "never"],
+    "no-duplicate-imports": "error",
+    "no-var": "error",
+    "prefer-const": "error",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "prefer-template": "error",
+    "rest-spread-spacing": ["error", "never"],
+    "react/display-name": 0,
+
+    "lines-around-comment": [
+      "error",
+
+      {
+        "beforeLineComment": true,
+        "allowBlockStart": true
+      }
+    ],
+
+    "camelcase": [
+      "error",
+
+      {
+        "ignoreDestructuring": true
+      }
+    ],
+
+    "no-else-return": [
+      "error",
+
+      {
+        "allowElseIf": false
+      }
+    ],
+
+    "key-spacing": [
+      "error",
+
+      {
+        "beforeColon": false,
+        "afterColon": true
+      }
+    ],
+
+    "comma-spacing": [
+      "error",
+
+      {
+        "before": false,
+        "after": true
+      }
+    ]
+  }
+}
