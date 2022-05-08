@@ -2,13 +2,13 @@ import cors from "cors";
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
-import config from "./config";
+import dbConfig from "./dbConfig";
 import router from "./router";
 
 const app = express();
 
 mongoose.Promise = Promise;
-mongoose.connect(config.database, config.options);
+mongoose.connect(dbConfig.database, dbConfig.options);
 mongoose.connection.on("connected", () => console.log("DB connected"));
 mongoose.connection.on("error", error => console.log(error));
 

@@ -55,6 +55,7 @@ export const formatErrorResponse = (error = {}) => {
 export const formatValidationErrorResponse = (fields = {}) => {
   const formFields = {};
   const paramFields = {};
+  const queryFields = {};
 
   Object.entries(fields).forEach(([key, item]) => {
     if (item.location === "body") {
@@ -68,12 +69,17 @@ export const formatValidationErrorResponse = (fields = {}) => {
     if (item.location === "params") {
       paramFields[key] = item;
     }
+
+    if (item.location === "query") {
+      queryFields[key] = item;
+    }
   });
 
   const isFormValidationExist = Object.keys(formFields).length > 0;
   const isParamValidationExist = Object.keys(paramFields).length > 0;
+  const isQueryValidationExist = Object.keys(queryFields).length > 0;
 
-  if (!isFormValidationExist && !isParamValidationExist) {
+  if (!isFormValidationExist && !isParamValidationExist && !isQueryValidationExist) {
     return responseErrorObject({
       message: "Undefined error",
       code: "undefined_error",
@@ -86,6 +92,19 @@ export const formatValidationErrorResponse = (fields = {}) => {
     return responseErrorObject({
       message: item.msg,
       code: "validation_param_error",
+
+      key: {
+        [item.param]: item.value,
+      },
+    });
+  }
+
+  if (isQueryValidationExist) {
+    const item = queryFields[Object.keys(queryFields)[0]];
+
+    return responseErrorObject({
+      message: item.msg,
+      code: "validation_query_error",
 
       key: {
         [item.param]: item.value,

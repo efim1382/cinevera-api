@@ -12,6 +12,7 @@ module.exports = {
       "models": `${__dirname}/src/models`,
       "helpers": `${__dirname}/src/helpers`,
       "middlewares": `${__dirname}/src/middlewares`,
+      "config": `${__dirname}/src/config`,
     };
 
     config.plugins = [
