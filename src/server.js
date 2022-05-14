@@ -5,6 +5,10 @@ import mongoose from "mongoose";
 import dbConfig from "./dbConfig";
 import router from "./router";
 
+import "models/Object";
+import "models/Season";
+import "models/Episode";
+
 const app = express();
 
 mongoose.Promise = Promise;

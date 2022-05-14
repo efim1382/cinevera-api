@@ -2,18 +2,17 @@ import { query } from "express-validator";
 import handleValidationError from "middlewares/handleValidationError";
 import genresValues from "config/genres";
 
+const types = ["movie", "series"];
 const sortValues = ["recommended", "year", "rating"];
 
 export default [
-  query("sort").custom((value) => {
-    if (!!value && !sortValues.includes(value)) {
-      throw new Error(`${value} sort type is not defined`);
-    }
+  query("type").optional().isIn(types),
 
-    return true;
-  }),
+  query("sort").optional().isIn(sortValues),
 
-  query("genres").custom((value) => {
+  query("limit").optional().isNumeric(),
+
+  query("genres").optional().custom((value) => {
     if (value) {
       const formattedGenres = value.split(",");
 

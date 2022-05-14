@@ -1,4 +1,4 @@
-import MovieModel from "models/Movie";
+import ObjectModel from "models/Object";
 import { formatErrorResponse } from "helpers/formatResponse";
 
 const Search = async (req, res) => {
@@ -16,15 +16,15 @@ const Search = async (req, res) => {
   }
 
   try {
-    const movies = await MovieModel
-      .find({ name: new RegExp(query, "i") })
+    const result = await ObjectModel
+      .find({ title: new RegExp(query, "i") })
       .limit(limit);
 
     res.json({
       status: true,
 
       data: {
-        result: movies,
+        result,
       },
     });
   } catch (error) {

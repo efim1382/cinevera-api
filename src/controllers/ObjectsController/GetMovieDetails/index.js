@@ -1,12 +1,12 @@
-import MovieModel from "models/Movie";
+import ObjectModel from "models/Object";
 import { formatErrorResponse } from "helpers/formatResponse";
 
-const GetMovie = async (req, res) => {
+const GetMovieDetails = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const movie = await MovieModel
-        .findOne({ _id: id });
+    const movie = await ObjectModel
+      .findOne({ _id: id });
 
     res.json({
       status: true,
@@ -20,5 +20,5 @@ const GetMovie = async (req, res) => {
   }
 };
 
-export default GetMovie;
+export default GetMovieDetails;
 export { default as validations } from "./validations";
