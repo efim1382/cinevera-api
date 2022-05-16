@@ -22,6 +22,15 @@ const ObjectSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Season",
   }],
+
+  cast: [{
+    actor: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Actor",
+    },
+
+    characterName: { type: String },
+  }],
 }, {
   toJSON: { virtuals: true },
   toObject: { virtuals: true },

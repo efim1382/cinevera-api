@@ -15,7 +15,7 @@ const GetSeriesDetails = async (req, res) => {
         path: "seasons",
 
         populate: {
-          path: "episodes",
+          path: "episodes cast.actor",
         },
       });
 

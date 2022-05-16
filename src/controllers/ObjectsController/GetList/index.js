@@ -40,7 +40,10 @@ const GetList = async (req, res) => {
       query.limit(limit);
     }
 
-    const result = await query;
+    const result = await query
+      .populate({
+        path: "cast.actor",
+      });
 
     res.json({
       status: true,

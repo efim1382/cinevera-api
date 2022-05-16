@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import dbConfig from "./dbConfig";
 import router from "./router";
 
+import "models/Actor";
 import "models/Object";
 import "models/Season";
 import "models/Episode";
