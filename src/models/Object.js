@@ -12,6 +12,12 @@ const ObjectSchema = new Schema({
   genres: { type: [String], required: true },
   objectType: { type: String, required: true },
 
+  videos: [{
+    posterUrl: { type: String },
+    videoUrl: { type: String },
+    type: { type: String },
+  }],
+
   seasons: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Season",
