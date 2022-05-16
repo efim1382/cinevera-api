@@ -11,6 +11,12 @@ const SeasonSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Episode",
   }],
+
+  videos: [{
+    posterUrl: { type: String, required: true },
+    videoUrl: { type: String, required: true },
+    type: { type: String },
+  }],
 }, {
   toJSON: { virtuals: true },
   toObject: { virtuals: true },
