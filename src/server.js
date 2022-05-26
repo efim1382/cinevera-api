@@ -7,6 +7,7 @@ import router from "./router";
 
 import "models/Actor";
 import "models/Object";
+import "models/Video";
 import "models/Season";
 import "models/Episode";
 

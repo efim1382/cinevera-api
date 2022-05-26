@@ -11,6 +11,7 @@ const ObjectSchema = new Schema({
   year: { type: [Number], required: true },
   genres: { type: [String], required: true },
   objectType: { type: String, required: true },
+  video: { type: Schema.Types.ObjectId, ref: "Video" },
 
   videos: [{
     posterUrl: { type: String },

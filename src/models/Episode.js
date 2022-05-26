@@ -8,6 +8,7 @@ const EpisodeSchema = new Schema({
   title: { type: String, required: true },
   posterUrl: { type: String, required: true },
   duration: { type: Number, required: true },
+  video: { type: Schema.Types.ObjectId, ref: "Video" },
 }, {
   toJSON: { virtuals: true },
   toObject: { virtuals: true },
