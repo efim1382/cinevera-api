@@ -30,3 +30,4 @@ const Video = async (req, res) => {
 };
 
 export default Video;
+export { default as validations } from "./validations";
