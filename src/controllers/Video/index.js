@@ -1,4 +1,5 @@
 import fs from "fs";
+import path from "path";
 import VideoModel from "models/Video";
 import { formatErrorResponse } from "helpers/formatResponse";
 
@@ -8,7 +9,7 @@ const Video = async (req, res) => {
 
   try {
     const video = await VideoModel.findOne({ _id: id });
-    const videoPath = `${__dirname}/${video.path}`;
+    const videoPath = path.resolve(`${__dirname }/${video.path}`);
     const videoSize = fs.statSync(videoPath).size;
 
     const chunkSize = 1e+6;
