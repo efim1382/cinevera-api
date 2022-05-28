@@ -13,9 +13,8 @@ const SeasonSchema = new Schema({
   }],
 
   videos: [{
-    posterUrl: { type: String, required: true },
-    videoUrl: { type: String, required: true },
-    type: { type: String },
+    type: Schema.Types.ObjectId,
+    ref: "Video",
   }],
 
   cast: [{

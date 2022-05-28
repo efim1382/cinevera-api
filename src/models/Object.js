@@ -14,9 +14,8 @@ const ObjectSchema = new Schema({
   video: { type: Schema.Types.ObjectId, ref: "Video" },
 
   videos: [{
-    posterUrl: { type: String },
-    videoUrl: { type: String },
-    type: { type: String },
+    type: Schema.Types.ObjectId,
+    ref: "Video",
   }],
 
   seasons: [{

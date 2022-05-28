@@ -8,6 +8,8 @@ const GetMovieDetails = async (req, res) => {
     const movie = await ObjectModel
       .findOne({ _id: id })
 
+      .populate("videos")
+
       .populate({
         path: "cast.actor",
       });
