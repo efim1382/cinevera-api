@@ -20,10 +20,14 @@ const GetSeriesDetails = async (req, res) => {
       })
 
       .populate({
+        path: "videos",
+      })
+
+      .populate({
         path: "seasons",
 
         populate: {
-          path: "episodes videos",
+          path: "episodes",
         },
       });
 
