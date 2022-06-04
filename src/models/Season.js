@@ -16,15 +16,6 @@ const SeasonSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Video",
   }],
-
-  cast: [{
-    actor: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Actor",
-    },
-
-    characterName: { type: String },
-  }],
 }, {
   toJSON: { virtuals: true },
   toObject: { virtuals: true },
