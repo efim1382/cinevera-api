@@ -5,7 +5,8 @@ const GetOne = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const movie = await ObjectModel.findOne({ _id: id });
+    const movie = await ObjectModel.findOne({ _id: id })
+      .populate("cast.actor");
 
     res.json({
       status: true,
