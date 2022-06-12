@@ -5,7 +5,8 @@ const Update = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const movie = await ObjectModel.findByIdAndUpdate(id, req.body, { new: true });
+    const movie = await ObjectModel.findByIdAndUpdate(id, req.body, { new: true })
+      .populate("cast.actor");
 
     res.json({
       status: true,
