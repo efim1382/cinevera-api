@@ -6,7 +6,15 @@ const GetOne = async (req, res) => {
 
   try {
     const series = await ObjectModel.findOne({ _id: id })
-      .populate("cast.actor");
+      .populate("cast.actor")
+
+      .populate({
+        path: "seasons",
+
+        populate: {
+          path: "episodes",
+        },
+      });
 
     res.json({
       status: true,
