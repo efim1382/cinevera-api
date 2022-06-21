@@ -18,11 +18,6 @@ const ObjectSchema = new Schema({
     ref: "Video",
   }],
 
-  seasons: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Season",
-  }],
-
   cast: [{
     actor: {
       type: mongoose.Schema.Types.ObjectId,
@@ -34,6 +29,12 @@ const ObjectSchema = new Schema({
 }, {
   toJSON: { virtuals: true },
   toObject: { virtuals: true },
+});
+
+ObjectSchema.virtual("seasons", {
+  ref: "Season",
+  localField: "_id",
+  foreignField: "object",
 });
 
 const MovieModel = mongoose.model("Object", ObjectSchema);
