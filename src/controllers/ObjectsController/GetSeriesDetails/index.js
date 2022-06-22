@@ -9,6 +9,7 @@ const GetSeriesDetails = async (req, res) => {
       .findOne({
         _id: id,
         objectType: "series",
+        status: "visible",
       })
 
       .populate({

@@ -14,7 +14,10 @@ const GetList = async (req, res) => {
     limit = parseInt(limit);
   }
 
-  const findObject = {};
+  const findObject = {
+    status: "visible",
+  };
+
   const sortObject = {};
 
   if (type) {

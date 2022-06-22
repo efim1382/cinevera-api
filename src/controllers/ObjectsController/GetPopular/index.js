@@ -4,7 +4,9 @@ import { formatErrorResponse } from "helpers/formatResponse";
 const GetPopular = async (req, res) => {
   const { type, exclude } = req.query;
 
-  const findObject = {};
+  const findObject = {
+    status: "visible",
+  };
 
   if (type) {
     findObject["objectType"] = type;
