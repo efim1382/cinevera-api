@@ -17,7 +17,11 @@ const Search = async (req, res) => {
 
   try {
     const result = await ObjectModel
-      .find({ title: new RegExp(query, "i") })
+      .find({
+        title: new RegExp(query, "i"),
+        status: "visible",
+      })
+
       .limit(limit);
 
     res.json({
